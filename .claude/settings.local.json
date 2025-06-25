@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(npm create:*)",
+      "Bash(npm install)",
+      "Bash(mkdir:*)",
+      "Bash(npm init:*)",
+      "Bash(rm:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss init:*)",
+      "Bash(npm run migrate:*)",
+      "Bash(npx knex migrate:*)",
+      "Bash(npm run build:*)",
+      "Bash(sqlite3:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(find:*)",
+      "Bash(npm ls:*)",
+      "Bash(mv:*)",
+      "Bash(grep:*)",
+      "Bash(npm run dev:*)",
+      "Bash(pkill:*)",
+      "Bash(true)",
+      "Bash(rg:*)",
+      "Bash(curl:*)",
+      "Bash(kill:*)",
+      "Bash(npm start)",
+      "Bash(npm run lint)",
+      "mcp__Playwright__browser_navigate",
+      "mcp__Playwright__browser_close",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_install"
+    ],
+    "deny": []
+  }
+}

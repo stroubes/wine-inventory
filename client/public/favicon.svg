@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="16" fill="#7f1d1d"/>
+  
+  <!-- Wine bottle -->
+  <path d="M12 5h8v3c0 .5-.2 1-.5 1.4L18 11v13c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2V11l-1.5-1.6c-.3-.4-.5-.9-.5-1.4V5z" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Bottle neck -->
+  <path d="M13 5h6v3c0 .3-.1.6-.3.8L18 9h-4l-.7-.7c-.2-.2-.3-.5-.3-.8V5z" fill="#ffffff"/>
+  
+  <!-- Wine liquid -->
+  <path d="M13 18v6c0 .6.4 1 1 1h4c.6 0 1-.4 1-1v-6c0-.6-.4-1-1-1h-4c-.6 0-1 .4-1 1z" fill="#dc2626"/>
+  
+  <!-- Cork -->
+  <rect x="13.5" y="4" width="5" height="1.5" rx="0.2" fill="#8b4513"/>
+  
+  <!-- JM initials -->
+  <text x="16" y="28" font-family="serif" font-size="6" font-weight="bold" text-anchor="middle" fill="#ffffff">JM</text>
+</svg>
