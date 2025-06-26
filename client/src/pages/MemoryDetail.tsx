@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ChevronLeftIcon, StarIcon, CalendarIcon, MapPinIcon, PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { memoryApi, type WineMemory } from '../services/memoryApi';
-import { wineApi, type Wine } from '../services/api';
+import { wineApi } from '../services/api';
+import type { Wine } from '../types/wine';
 import MemoryForm from '../components/MemoryForm';
 
 const MemoryDetail: React.FC = () => {
@@ -166,7 +167,7 @@ const MemoryDetail: React.FC = () => {
             <div className="flex items-center">
               <CalendarIcon className="h-5 w-5 text-gray-400 mr-2" />
               <span className="text-gray-900">
-                {new Date(memory.memory_date).toLocaleDateString()}
+                {new Date(memory.experience_date).toLocaleDateString()}
               </span>
             </div>
             
@@ -188,26 +189,17 @@ const MemoryDetail: React.FC = () => {
           </div>
 
           {/* Memory Content */}
-          {memory.content && (
+          {memory.description && (
             <div className="prose max-w-none">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Memory</h3>
               <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
-                {memory.content}
+                {memory.description}
               </div>
             </div>
           )}
 
-          {/* Memory Photos */}
-          {memory.photo_url && (
-            <div className="mt-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Photo</h3>
-              <img
-                src={memory.photo_url}
-                alt="Memory photo"
-                className="max-w-full h-auto rounded-lg shadow-md"
-              />
-            </div>
-          )}
+          {/* Memory Photos - TODO: Implement image display */}
+          {/* This section needs to be implemented with actual image fetching */}
         </div>
       </div>
     </div>

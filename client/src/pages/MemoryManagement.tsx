@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { PlusIcon, CalendarIcon, StarIcon, TrashIcon, PencilIcon, EyeIcon } from '@heroicons/react/24/outline';
+import { PlusIcon, CalendarIcon, StarIcon, TrashIcon, PencilIcon } from '@heroicons/react/24/outline';
 import { memoryApi, type WineMemory, type MemoryStats } from '../services/memoryApi';
 import { wineApi } from '../services/api';
 import type { Wine } from '../types/wine';

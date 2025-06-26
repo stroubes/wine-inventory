@@ -5,10 +5,12 @@ import RichTextEditor from './RichTextEditor';
 import { imageApi } from '../services/imageApi';
 
 interface MemoryFormProps {
-  wineId: string;
+  wineId?: string;
   initialData?: WineMemory;
-  onSubmit: (data: CreateMemoryRequest | UpdateMemoryRequest) => Promise<void>;
+  memory?: WineMemory;
+  onSubmit?: (data: CreateMemoryRequest | UpdateMemoryRequest) => Promise<void>;
   onCancel?: () => void;
+  onClose?: (updated?: WineMemory) => void;
   isEditing?: boolean;
   isLoading?: boolean;
 }
@@ -16,8 +18,10 @@ interface MemoryFormProps {
 const MemoryForm: React.FC<MemoryFormProps> = ({
   wineId,
   initialData,
+  memory,
   onSubmit,
   onCancel,
+  onClose,
   isEditing = false,
   isLoading = false
 }) => {
