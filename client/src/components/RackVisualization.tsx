@@ -52,7 +52,7 @@ const RackVisualization: React.FC<RackVisualizationProps> = ({
       try {
         setIsLoading(true);
         // Import the SVG file as text
-        const response = await fetch('/src/assets/winerack2.svg');
+        const response = await fetch('/winerack2.svg');
         const svgText = await response.text();
         setSvgContent(svgText);
       } catch (error) {
