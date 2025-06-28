@@ -7,10 +7,8 @@ import { imageApi } from '../services/imageApi';
 interface MemoryFormProps {
   wineId?: string;
   initialData?: WineMemory;
-  memory?: WineMemory;
-  onSubmit?: (data: CreateMemoryRequest | UpdateMemoryRequest) => Promise<void>;
+  onSubmit: (data: CreateMemoryRequest | UpdateMemoryRequest) => Promise<void>;
   onCancel?: () => void;
-  onClose?: (updated?: WineMemory) => void;
   isEditing?: boolean;
   isLoading?: boolean;
 }
@@ -18,10 +16,8 @@ interface MemoryFormProps {
 const MemoryForm: React.FC<MemoryFormProps> = ({
   wineId,
   initialData,
-  memory,
   onSubmit,
   onCancel,
-  onClose,
   isEditing = false,
   isLoading = false
 }) => {
@@ -111,7 +107,9 @@ const MemoryForm: React.FC<MemoryFormProps> = ({
     
     setImageUploadLoading(true);
     try {
-      await imageApi.uploadWineImages(wineId, memoryPhotos, 'memory');
+      if (wineId) {
+        await imageApi.uploadWineImages(wineId, memoryPhotos, 'memory');
+      }
       setMemoryPhotos([]);
     } catch (error) {
       console.error('Memory photo upload error:', error);

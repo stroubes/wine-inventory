@@ -2,12 +2,14 @@ export interface Wine {
   id: string;
   name: string;
   vineyard: string;
+  winery: string;
   region: string;
   color: 'Red' | 'White' | 'Rosé' | 'Sparkling' | 'Dessert' | 'Fortified';
   grape_varieties: string[];
   price?: number;
   currency: string;
   vintage_year?: number;
+  vintage?: number;
   date_added: Date;
   rack_slot?: string;
   consumption_status: 'Available' | 'Consumed' | 'Reserved';
@@ -41,8 +43,10 @@ export interface WineMemory {
   id: string;
   wine_id: string;
   title: string;
-  description: string;
+  content: string;
+  description?: string;
   experience_date: Date;
+  date_experienced: Date;
   location?: string;
   tags: string[];
   rating?: number; // 1-5 stars

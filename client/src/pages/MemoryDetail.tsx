@@ -103,8 +103,13 @@ const MemoryDetail: React.FC = () => {
     return (
       <div className="max-w-4xl mx-auto p-6">
         <MemoryForm
-          memory={memory}
-          onClose={handleFormClose}
+          initialData={memory}
+          onSubmit={async (data) => {
+            await memoryApi.updateMemory(memory.id, data);
+            handleFormClose(memory);
+          }}
+          onCancel={() => setShowEditForm(false)}
+          isEditing={true}
         />
       </div>
     );
@@ -167,7 +172,7 @@ const MemoryDetail: React.FC = () => {
             <div className="flex items-center">
               <CalendarIcon className="h-5 w-5 text-gray-400 mr-2" />
               <span className="text-gray-900">
-                {new Date(memory.experience_date).toLocaleDateString()}
+                {new Date(memory.date_experienced).toLocaleDateString()}
               </span>
             </div>
             
@@ -189,11 +194,11 @@ const MemoryDetail: React.FC = () => {
           </div>
 
           {/* Memory Content */}
-          {memory.description && (
+          {memory.content && (
             <div className="prose max-w-none">
               <h3 className="text-lg font-semibold text-gray-900 mb-3">Memory</h3>
               <div className="whitespace-pre-wrap text-gray-700 leading-relaxed">
-                {memory.description}
+                {memory.content}
               </div>
             </div>
           )}
