@@ -9,8 +9,10 @@ const mapMemoryToApi = (dbMemory: any) => {
   if (!dbMemory) return null;
   return {
     ...dbMemory,
-    content: dbMemory.description,
-    date_experienced: dbMemory.experience_date,
+    // Use the new content and date_experienced columns directly
+    // Fall back to old columns if new ones are empty (for backward compatibility)
+    content: dbMemory.content || dbMemory.description,
+    date_experienced: dbMemory.date_experienced || dbMemory.experience_date,
     tags: JSON.parse(dbMemory.tags || '[]')
   };
 };
